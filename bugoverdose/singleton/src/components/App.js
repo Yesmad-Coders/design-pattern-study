@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-
-export const NerdPointContext = React.createContext({
-  nerdPoint: 0,
-  increment: () => {},
-  decrement: () => {},
-});
+import { NerdPointContext } from "../utils/nerdpoint-context";
 
 const App = ({ children }) => {
   const [nerdPoint, setNerdPoint] = useState(0); // 최상위 컴포넌트인 App에서 단 하나의 state를 생성

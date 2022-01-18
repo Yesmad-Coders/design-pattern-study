@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "gatsby";
-import { NerdPointContext } from "../components/App";
+import { NerdPointContext } from "../utils/nerdpoint-context";
 
 const SingletonStatePage = () => {
   return (
