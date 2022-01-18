@@ -15,7 +15,7 @@
 5. 주 1회 자신이 준비한 예제 코드를 공유하는 모임을 한다.
 6. 예제들을 공유할 때 **꼭 코드 리뷰를 진행**하며 서로의 의견을 듣는다.
 
-# 📝 학습자료
+## 📝 학습자료
 [Learning Patterrns - Addy Osmani and Lydia Hallie](https://www.patterns.dev/book/)
 ## 🖐 참여자
 
