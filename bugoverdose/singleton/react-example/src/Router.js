@@ -1,12 +1,14 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import StateConsumerComponent from "./components/consumer";
+import ContextConsumerComponent from "./components/consumer";
+import UseContextComponent from "./components/use-context";
 
 const Router = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<StateConsumerComponent />} />
+        <Route path="/use-context" element={<UseContextComponent />} />
+        <Route path="/" element={<ContextConsumerComponent />} />
       </Routes>
     </BrowserRouter>
   );
