@@ -1,8 +1,8 @@
 # Design Pattern Study
 
-<h2 align="center">
+<span align="center">
   <img src="thumbnail.jpg" alt="Leaning Patterns" width="300">
-</h2>
+</span>
 
 > "Give me some Cool Quote bout Design Patterns :)"
 
