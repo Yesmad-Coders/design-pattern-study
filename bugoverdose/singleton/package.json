@@ -1,8 +1,8 @@
 {
-  "name": "bugoverdose-design-patterns",
+  "name": "singleton",
   "version": "1.0.0",
   "private": true,
-  "description": "Bugoverdose Design Patterns",
+  "description": "Bugoverdose Singleton Pattern",
   "author": "Jinwoo Jeong",
   "keywords": [
     "gatsby"

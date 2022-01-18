@@ -1,4 +1,4 @@
-let count = 0;
+let count = 0; // 이처럼 전역 스코프에서 상태관리하는 방식은 안티패턴
 
 const counter = {
   getCount() {
@@ -12,6 +12,6 @@ const counter = {
   },
 };
 
-Object.freeze(counter);
+Object.freeze(counter); // 객체의 수정 방지
 
 export { counter };

@@ -6,7 +6,12 @@ const IndexPage = () => {
     <main>
       <title>Home</title>
       <h1>Home</h1>
-      <Link to="/singleton">싱글톤 패턴</Link>
+      <li>
+        <Link to="/vanilla">Singleton 바닐라JS</Link>
+      </li>
+      <li>
+        <Link to="/state">Singleton State - useState and useContext</Link>
+      </li>
     </main>
   );
 };

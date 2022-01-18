@@ -1,5 +1,5 @@
 import React from "react";
-import { counter } from "../../../utils/counter";
+import { counter } from "../../utils/counter";
 import { Link } from "gatsby";
 
 const SingletonVanillaPage = () => {
@@ -10,10 +10,13 @@ const SingletonVanillaPage = () => {
       <div>현재 값: {counter.getCount()}</div>
 
       <li>
-        <Link to="/singleton/vanilla/increment">증가시키러 가기</Link>
+        <Link to="/vanilla/increment">증가시키러 가기</Link>
       </li>
       <li>
-        <Link to="/singleton/vanilla/decrement">감소시키러 가기</Link>
+        <Link to="/vanilla/decrement">감소시키러 가기</Link>
+      </li>
+      <li>
+        <Link to="/">Go home</Link>
       </li>
 
       <p>
