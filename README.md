@@ -16,20 +16,20 @@
 6. 예제들을 공유할 때 **꼭 코드 리뷰를 진행**하며 서로의 의견을 듣는다.
 
 ## 📝 학습자료
-<a href="https://www.patterns.dev/book" target="_blank">Learning Patterns - Addy Osmani and Lydia Hallie</a>
+[Learning Patterns - Addy Osmani and Lydia Hallie](https://www.patterns.dev/book)
 
 ## 🖐 참여자
 
 | 참가자 이름 |   Github 프로필  |  정리 자료  |
 | :---------: | :-------------: | :-------------------: | 
-| 김리하 | [bravacoreana](https://github3com/bravacoreana) | [:link:](bravacoreana/README.md) |
+| 김리하 | [bravacoreana](https://github.com/bravacoreana) | [:link:](bravacoreana/README.md) |
 | 김민수 | [alstn2468](https://github.com/alstn2468) |  [:link:](alstn2468/README.md)  |
 | 김우리 | [woori3104](https://github.com/woori3104) | [:link:](woori3104/README.md) |
-| 성현제 | [hyunjaesung](https://github.com/hyunjaesung) | [:link:](stevy/README.md) |
+| 성현제 | [hyunjaesung](https://github.com/hyunjaesung) | [:link:](hyunjaesung/README.md) |
 | 이우림 | [ForestLee0513](https://github.com/ForestLee0513) | [:link:](ForestLee0513/README.md) |
 | 정진우 | [bugoverdose](https://github.com/bugoverdose) | [:link:](bugoverdose/README.md) |
 | 조성빈 | [chobobdev](https://github.com/chobobdev) | [:link:](chobobdev/README.md) |
-| Henry | [devgony](https://github.com/devgony) | [:link:](henry/README.md) |
+| Henry | [devgony](https://github.com/devgony) | [:link:](devgony/README.md) |
 
 
 <div align="center">
