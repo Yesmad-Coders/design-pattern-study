@@ -1,4 +1,4 @@
-# design-pattern-study
+# Design Pattern Study
 
 <h2 align="center">
   <img src="thumbnail.jpg" alt="Leaning Patterns" width="300">
@@ -16,7 +16,8 @@
 6. 예제들을 공유할 때 **꼭 코드 리뷰를 진행**하며 서로의 의견을 듣는다.
 
 ## 📝 학습자료
-[Learning Patterrns - Addy Osmani and Lydia Hallie](https://www.patterns.dev/book/)
+<a href="https://www.patterns.dev/book" target="_blank">Learning Patterns - Addy Osmani and Lydia Hallie</a>
+
 ## 🖐 참여자
 
 | 참가자 이름 |   Github 프로필  |  정리 자료  |
