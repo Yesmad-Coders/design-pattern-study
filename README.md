@@ -24,6 +24,7 @@
 | 김우리 | [woori3104](https://github.com/woori3104) | [Learning Patterrns - Addy Osmani and Lydia Hallie](https://www.patterns.dev/book/) | [:link:](woori3104/README.md) |
 | 성현제 | [hyunjaesung](https://github.com/hyunjaesung) | [Learning Patterrns - Addy Osmani and Lydia Hallie](https://www.patterns.dev/book/) | [:link:](stevy/README.md) |
 | 이우림 | [ForestLee0513](https://github.com/ForestLee0513) | [Learning Patterrns - Addy Osmani and Lydia Hallie](https://www.patterns.dev/book/) | [:link:](ForestLee0513/README.md) |
+| 정진우 | [bugoverdose](https://github.com/bugoverdose) | [Learning Patterrns - Addy Osmani and Lydia Hallie](https://www.patterns.dev/book/) | [:link:](bugoverdose/README.md) |
 | 조성빈 | [chobobdev](https://github.com/chobobdev) | [Learning Patterrns - Addy Osmani and Lydia Hallie](https://www.patterns.dev/book/) | [:link:](chobobdev/README.md) |
 | Henry | [devgony](https://github.com/devgony) | [Learning Patterrns - Addy Osmani and Lydia Hallie](https://www.patterns.dev/book/) | [:link:](henry/README.md) |
 
