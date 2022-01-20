@@ -8,6 +8,7 @@
     "outDir": "src"
   },
   "include": [
-    "./src"
+    "./src",
+    "./__test__"
   ]
 }
