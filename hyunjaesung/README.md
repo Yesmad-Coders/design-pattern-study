@@ -22,7 +22,7 @@
 
 | # | Pattern | 공부 기간 | 예제 |
 | :--: | :-----: | :---------------: | :-------: |
-| 1 | Singleton Pattern | 2022-01-18~ | [/singleton](singleton) |
+| 1 | Singleton Pattern | 2022-01-18~ | [singleton](singleton) |
 
 
 <div align="center">
