@@ -16,7 +16,8 @@
 - React 에서 Design Pattern 활용법 이해하기
 - JS 와 TS 예제코드 모두 만들어 보기
 - 성실한 개발자 되기 -->
-
+## 정리
+[🦈 Notion](https://nine-stilton-f82.notion.site/Patterns-fa90213e702c4f958b40551552a4e58b)
 
 ## 예제코드
 
