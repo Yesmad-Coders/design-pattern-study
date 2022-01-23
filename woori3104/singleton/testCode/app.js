@@ -12,4 +12,6 @@ app.use(express.json());
 app.listen(3000, async () => {
   let client = await mongodb.getClient();
   let client2 = await mongodb.getClient();
+  console.log(client2===client);
 });
+
