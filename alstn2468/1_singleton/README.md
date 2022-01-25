@@ -66,7 +66,7 @@ console.log(
 
 새로운 메소드를 두 번 호출함으로써, 단지 `counter1`과 `counter2`를 서로 다른 인스턴스로 설정합니다. `counter1`과 `counter2`의 `getInstance` 메서드에 의해 반환된 값은 서로 다른 인스턴스에 대한 참조를 효과적으로 반환했습니다. 즉, 두 인스턴스의 값이 완전히 동일하지는 않습니다.
 
-https://res.cloudinary.com/ddxwdqwkr/video/upload/v1609056519/patterns.dev/jspat-52_zkwyk1.mp4
+![Singleton 1](./images/singleton-1.gif)
 
 `Counter` 클래스의 인스턴스를 **하나만** 만들 수 있도록 확인할 수 있습니다.
 
@@ -154,7 +154,7 @@ export default singletonCounter;
 
 `blueButton.js`와 `redButton.js`는 모두 `counter.js`에서 **동일한 인스턴스**를 가져옵니다. 이 인스턴스는 두 파일 모두에서 **Counter**로 가져옵니다.
 
-https://res.cloudinary.com/ddxwdqwkr/video/upload/v1609056519/patterns.dev/jspat-56_wylvcf.mp4
+![Singleton 2](./images/singleton-2.gif)
 
 `redButton.js` 또는 `blueButton.js`에서 `increment` 메서드를 호출하면 `Counter` 인스턴스의 `counter` 속성 값이 두 파일 모두에서 업데이트됩니다. 빨간색 버튼을 클릭하든 파란색 버튼을 클릭하든 상관 없습니다. 모든 인스턴스에서 동일한 값이 공유됩니다. 이것이 다른 파일에서 메소드를 호출하고 있음에도 불구하고 `counter`가 계속 1씩 증가하는 이유입니다.
 
