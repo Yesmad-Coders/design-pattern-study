@@ -5,6 +5,7 @@
 |  No |      Pattern      |            Example            |
 | :-: | :---------------: | :---------------------------: |
 |  1  | Singleton Pattern | [📁](./1_singleton/README.md) |
+|  2  |   Proxy Pattern   |   [📁](./2_proxy/README.md)   |
 
 
 <div align="center">
