@@ -1,3 +1,11 @@
+function delay(sec) {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(2);
+    }, sec * 1000);
+  });
+}
+
 let view = new Proxy(
   {
     selected: null,
@@ -25,14 +33,19 @@ let view = new Proxy(
   }
 );
 
-let i1 = (view.selected = document.getElementById("item-1")); //giving error here, i1 is null
-console.log(i1.getAttribute("aria-selected"));
-//  'true'
+(async () => {
+  await delay(2);
+  let i1 = (view.selected = document.getElementById("item-1")); //giving error here, i1 is null
+  console.log(i1.getAttribute("aria-selected"));
+  //  'true'
 
-let i2 = (view.selected = document.getElementById("item-2"));
-console.log(i1.getAttribute("aria-selected"));
-//  'false'
+  await delay(2);
+  let i2 = (view.selected = document.getElementById("item-2"));
+  console.log(i1.getAttribute("aria-selected"));
+  //  'false'
 
-console.log(i2.getAttribute("aria-selected"));
-//  'true'
-// Note: even if selected: !null, then giving oldval.setAttribute is not a function
+  await delay(2);
+  console.log(i2.getAttribute("aria-selected"));
+  //  'true'
+  // Note: even if selected: !null, then giving oldval.setAttribute is not a function
+})();
