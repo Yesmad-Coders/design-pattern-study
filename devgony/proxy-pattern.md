@@ -148,6 +148,8 @@ console.log(Peter.age); // 13
 
 ### Manipulating DOM nodes
 
+- set 할 때마다 기존의 값이 있다면 false 로 변경하고 새로 들어오는 newval만 true 로 변경하는 예제
+
 ```js
 let view = new Proxy(
   {
@@ -155,14 +157,15 @@ let view = new Proxy(
   },
   {
     set: function (obj, prop, newval) {
+      console.log(obj, prop, newval);
       let oldval = obj[prop];
 
       if (prop === "selected") {
         if (oldval) {
-          oldval.setAttribute("aria-selected", "false");
+          oldval.checked = false;
         }
         if (newval) {
-          newval.setAttribute("aria-selected", "true");
+          newval.checked = true;
         }
       }
 
@@ -175,15 +178,20 @@ let view = new Proxy(
   }
 );
 
-let i1 = (view.selected = document.getElementById("item-1")); //giving error here, i1 is null
-console.log(i1.getAttribute("aria-selected"));
-//  'true'
+(async () => {
+  await delay(2);
+  let i1 = (view.selected = document.getElementById("item-1")); //giving error here, i1 is null
+  console.log(i1.checked);
+  //  true
 
-let i2 = (view.selected = document.getElementById("item-2"));
-console.log(i1.getAttribute("aria-selected"));
-//  'false'
+  await delay(2);
+  let i2 = (view.selected = document.getElementById("item-2"));
+  console.log(i1.checked);
+  //  false
 
-console.log(i2.getAttribute("aria-selected"));
-//  'true'
-// Note: even if selected: !null, then giving oldval.setAttribute is not a function
+  await delay(2);
+  console.log(i2.checked);
+  //  true
+  // Note: even if selected: !null, then giving oldval.setAttribute is not a function
+})();
 ```
