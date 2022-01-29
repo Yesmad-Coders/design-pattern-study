@@ -85,3 +85,105 @@ new Proxy(person, {
 ## 단점
 
 - 과도한 사용, 무거운 작업을 Proxy-pattern으로 하면 성능 문제 일으킴
+
+## 예제
+
+### get 에 default 값을 추가
+
+```js
+const handler = {
+  get: function (obj, prop) {
+    return prop in obj ? obj[prop] : 37;
+  },
+};
+
+const p = new Proxy({}, handler);
+p.a = 1;
+p.b = undefined;
+
+console.log(p.a, p.b);
+//  1, undefined
+
+console.log("c" in p, p.c);
+//  false, 37
+```
+
+### Extending constructor
+
+- constructor(), apply() 사용하여 새 constructor로 확장
+
+```js
+function extend(sup, base) {
+  base.prototype = Object.create(sup.prototype);
+  base.prototype.constructor = new Proxy(base, {
+    construct: function (target, args) {
+      var obj = Object.create(base.prototype);
+      this.apply(target, obj, args);
+      return obj;
+    },
+    apply: function (target, that, args) {
+      sup.apply(that, args);
+      base.apply(that, args);
+    },
+  });
+  return base.prototype.constructor;
+}
+
+var Person = function (name) {
+  this.name = name;
+};
+
+var Boy = extend(Person, function (name, age) {
+  this.age = age;
+});
+
+Boy.prototype.gender = "M";
+
+var Peter = new Boy("Peter", 13);
+
+console.log(Peter.gender); // "M"
+console.log(Peter.name); // "Peter"
+console.log(Peter.age); // 13
+```
+
+### Manipulating DOM nodes
+
+```js
+let view = new Proxy(
+  {
+    selected: null,
+  },
+  {
+    set: function (obj, prop, newval) {
+      let oldval = obj[prop];
+
+      if (prop === "selected") {
+        if (oldval) {
+          oldval.setAttribute("aria-selected", "false");
+        }
+        if (newval) {
+          newval.setAttribute("aria-selected", "true");
+        }
+      }
+
+      // The default behavior to store the value
+      obj[prop] = newval;
+
+      // Indicate success
+      return true;
+    },
+  }
+);
+
+let i1 = (view.selected = document.getElementById("item-1")); //giving error here, i1 is null
+console.log(i1.getAttribute("aria-selected"));
+//  'true'
+
+let i2 = (view.selected = document.getElementById("item-2"));
+console.log(i1.getAttribute("aria-selected"));
+//  'false'
+
+console.log(i2.getAttribute("aria-selected"));
+//  'true'
+// Note: even if selected: !null, then giving oldval.setAttribute is not a function
+```
