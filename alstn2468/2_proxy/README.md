@@ -41,3 +41,34 @@ const personProxy = new Proxy(person, {});
 
 <img src='./images/proxy-1.gif' width='100%' />
 
+`person` 객체와 직접 상호 작용하는 대신 `personProxy`와 상호 작용합니다.
+
+`PersonProxy` Proxy에 핸들러를 추가합니다. Proxy에서 `set` 메소드를 호출해 속성을 수정하려고 할 때 Proxy가 이전 값과 속성의 새 값을 기록하도록 합니다. Proxy에서 `get` 메소드를 호출해 속성에 접근하려고 할 때 Proxy가 속성의 키와 값을 포함하는 더 읽기 쉬운 문장을 기록하도록 합니다.
+
+```typescript
+const personProxy = new Proxy(person, {
+  get: (obj, prop) => {
+    console.log(`The value of ${prop} is ${obj[prop]}`);
+  },
+  set: (obj, prop, value) => {
+    console.log(`Changed ${prop} from ${obj[prop]} to ${value}`);
+    obj[prop] = value;
+  },
+});
+```
+
+완벽합니다. 속성을 수정하거나 검색하려고 할 때 어떻게 되는지 살펴보겠습니다.
+
+<iframe
+  src="https://codesandbox.io/embed/proxy-1-rkgyo?fontsize=14&hidenavigation=1&theme=dark"
+   style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+   title="proxy-1"
+   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+></iframe>
+
+`name` 속성에 접근할 때 Proxy가 듣기 좋은 문장을 반환했습니다. `name` 값은 `John Doe`입니다.
+
+`age` 속성을 수정할 때 Proxy가 `Changed age from 42 to 43.`처럼 이 속성의 이전 값과 새 값을 반환했습니다.
+
+<hr />
