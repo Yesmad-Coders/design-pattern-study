@@ -5,7 +5,6 @@ npm install
 npm start
 ```
 
-- 구현 조건에 웹팩을 못 쓴다는 조건이 있어서 쓰지 않았습니다.
 - script type="module"로 로컬 script 이용시 cors 문제를 일으켜서 live-server 로 실행해야 합니다.
 
 ## 테스트 실행
