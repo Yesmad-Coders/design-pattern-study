@@ -59,13 +59,7 @@ const personProxy = new Proxy(person, {
 
 완벽합니다. 속성을 수정하거나 검색하려고 할 때 어떻게 되는지 살펴보겠습니다.
 
-<iframe
-  src="https://codesandbox.io/embed/proxy-1-rkgyo?fontsize=14&hidenavigation=1&theme=dark"
-   style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-   title="proxy-1"
-   allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-   sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+[![Edit proxy-1](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/proxy-1-rkgyo?fontsize=14&hidenavigation=1&theme=dark)
 
 `name` 속성에 접근할 때 Proxy가 듣기 좋은 문장을 반환했습니다. `name` 값은 `John Doe`입니다.
 
@@ -101,13 +95,7 @@ const personProxy = new Proxy(person, {
 
 잘못된 값을 넘기려고 할 때 어떤 일이 생기는지 확인해 봅시다.
 
-<iframe
-  src="https://codesandbox.io/embed/proxy-2-dgk2v?fontsize=14&hidenavigation=1&theme=dark"
-  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="proxy-2"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+[![Edit proxy-2](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/proxy-2-dgk2v?fontsize=14&hidenavigation=1&theme=dark)
 
 Proxy는 잘못된 값으로 `person` 객체를 수정하고 있지 않다는 것을 확인시켜 주었고, 이것은 데이터를 순수하게 유지하는 데 도움이 됩니다.
 
@@ -135,13 +123,7 @@ const personProxy = new Proxy(person, {
 
 완벽합니다. 우리는 `Reflect` 객체를 사용해 대상 객체의 속성을 쉽게 접근하고 수정할 수 있습니다.
 
-<iframe
-  src="https://codesandbox.io/embed/proxy-3-o1hjx?fontsize=14&hidenavigation=1&theme=dark"
-  style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-  title="proxy-3"
-  allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
-  sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
-></iframe>
+[![Edit proxy-3](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/proxy-3-o1hjx?fontsize=14&hidenavigation=1&theme=dark)
 
 <hr />
 
