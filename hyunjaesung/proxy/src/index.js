@@ -3,13 +3,14 @@ import ReactDOM from 'react-dom';
 
 import App from './App';
 import {createStore} from './fakeRedux';
+// import Strawberry from './Strawberry';
 
-function reducer(state = 0, action) {
+function reducer(state = {count: 0}, action) {
   switch (action.type) {
     case 'INCREMENT':
-      return state + 1;
+      return {count: state.count + 1};
     case 'DECREMENT':
-      return state - 1;
+      return {count: state.count - 1};
     default:
       return state;
   }
@@ -21,6 +22,7 @@ const rootElement = document.getElementById('root');
 ReactDOM.render(
   <StrictMode>
     <App />
+    {/* <Strawberry /> */}
   </StrictMode>,
   rootElement
 );
