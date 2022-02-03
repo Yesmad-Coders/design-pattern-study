@@ -1,0 +1,17 @@
+{
+  "name": "kko_hyunjaesung",
+  "version": "1.0.0",
+  "description": "kko_hyunjaesung",
+  "main": "index.js",
+  "scripts": {
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "test": "./node_modules/.bin/cypress run —headed",
+    "start": "live-server --watch=./src --open=. --port=3000 --host=localhost"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "live-server": "^1.2.1",
+    "cypress": "^8.3.0"
+  }
+}
