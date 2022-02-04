@@ -4,8 +4,11 @@ import CoinData from "./CoinData";
 import CoinsData from "./CoinsData";
 
 const App = () => {
-  const [loadingCoin, setLoadingCoin] = useState(true);
   const [coinData, setCoinData] = useState([]);
+  const [loadingCoin, setLoadingCoin] = useState(true);
+
+  const [cacheData, setCacheData] = useState([]);
+  const [loadingCache, setLoadingCache] = useState(true);
 
   return (
     <CoinDataContext.Provider
@@ -14,6 +17,11 @@ const App = () => {
         setLoadingCoin,
         coinData,
         setCoinData,
+
+        cacheData,
+        setCacheData,
+        loadingCache,
+        setLoadingCache,
       }}
     >
       <CoinsData />
