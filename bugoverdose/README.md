@@ -8,10 +8,9 @@
 
 ## 예제코드
 
-| # | Pattern | 공부 기간 | 예제 |
-| :--: | :-----: | :---------------: | :-------: |
-| 1 | Singleton Pattern | 2022-01-18~2022-01-20 | [React](./singleton/react-example), [Gatsby](./singleton/gatsby-example) |
-
+|  #  |  Pattern  |     공부 기간     |                                   예제                                   |                                         블로그                                          |
+| :-: | :-------: | :---------------: | :----------------------------------------------------------------------: | :-------------------------------------------------------------------------------------: |
+|  1  | Singleton | 22/01/18-22/01/20 | [React](./singleton/react-example), [Gatsby](./singleton/gatsby-example) | [Link](https://bugoverdose.github.io/development/singleton-and-react-state-management/) |
 
 <div align="center">
 

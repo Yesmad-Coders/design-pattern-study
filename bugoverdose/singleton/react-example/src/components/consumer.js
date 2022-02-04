@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { NerdPointContext } from "../utils/nerdpoint-context";
+import { NerdPointContext } from "../context";
 
 const ContextConsumerComponent = () => {
   return (

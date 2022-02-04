@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { Link } from "react-router-dom";
-import { NerdPointContext } from "../utils/nerdpoint-context";
+import { NerdPointContext } from "../context";
 
 const UseContextComponent = () => {
   const { nerdPoint, increment, decrement } = useContext(NerdPointContext);
