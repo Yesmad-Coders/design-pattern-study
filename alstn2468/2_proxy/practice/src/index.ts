@@ -17,7 +17,7 @@ const ageValidator = (age: Form['age']) => age > 0 && age <= 4;
 const validateObject = (prop: Prop, value: Value) => {
   switch (prop) {
     case 'age':
-      if (ageValidator(Number(value))) {
+      if (typeof value === 'number' && ageValidator(value)) {
         validAge = true;
       } else {
         validAge = false;
@@ -58,7 +58,7 @@ nameInput.addEventListener('input', (e) => {
 });
 
 ageInput.addEventListener('keyup', (e) => {
-  formProxy.age = (<HTMLInputElement>e.target).value;
+  formProxy.age = Number((<HTMLInputElement>e.target).value);
   if (!validAge) {
     ageInput.setAttribute('class', 'error');
   } else {
