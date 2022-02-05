@@ -1,7 +1,7 @@
 import CoinCache from "./CoinCache";
 import { fetchCoinWithNoCache } from "../api";
 
-class CoinRepository {
+class CacheRepository {
   #coins;
 
   constructor() {
@@ -29,4 +29,4 @@ class CoinRepository {
   }
 }
 
-export default CoinRepository;
+export default CacheRepository;
