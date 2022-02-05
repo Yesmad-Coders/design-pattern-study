@@ -147,7 +147,7 @@ const personProxy = new Proxy(person, {
 ```
 
 ```jsx
-onst person = {
+const person = {
   name: "John Doe",
   age: 42,
   nationality: "American"
