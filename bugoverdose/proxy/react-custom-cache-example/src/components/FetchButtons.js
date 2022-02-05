@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { fetchCoinWithDefaultCache, fetchCoinWithNoCache } from "../api";
-import CoinRepository from "../domains/CoinRepository";
+import CacheRepository from "../domains/CacheRepository";
 
 const FetchButtons = ({ coinId, coinName }) => {
-  const [coinRepository] = useState(new CoinRepository());
+  const [cacheRepository] = useState(new CacheRepository());
 
   const onNoCacheClick = async (e, coinId, coinName) => {
     console.log(`Get ${coinName} data : (no cache)`);
@@ -29,7 +29,7 @@ const FetchButtons = ({ coinId, coinName }) => {
     console.log(`Get ${coinName} data : (custom cache)`);
     const startTime = new Date().getTime();
 
-    await coinRepository.findById(coinId);
+    await cacheRepository.findById(coinId);
 
     const endTime = new Date().getTime();
     console.log(`It took ${endTime - startTime}ms.`);
