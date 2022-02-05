@@ -1,5 +1,5 @@
 import CoinCache from "./CoinCache";
-import { fetchCoinPrice } from "../api";
+import { fetchCoinWithNoCache } from "../api";
 
 class CoinRepository {
   #coins;
@@ -11,13 +11,13 @@ class CoinRepository {
   async findById(coinId) {
     const coin = this.#coins[coinId];
 
-    console.log("look for cache!");
+    console.log("look for cache in application!");
 
     if (coin && !coin.isExpired()) return coin.getData();
 
-    const newData = await fetchCoinPrice(coinId);
+    const newData = await fetchCoinWithNoCache(coinId);
 
-    console.log("generate new cache!");
+    console.log("fetch data & generate new cache!");
 
     if (!coin) {
       this.#coins[coinId] = new CoinCache(newData);
