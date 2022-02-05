@@ -1,0 +1,22 @@
+body {
+  padding: 100px;
+  text-align: center;
+}
+
+label {
+  display: block;
+  margin-bottom: 20px;
+}
+
+input {
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+input.error {
+  border-bottom: 1px solid red;
+}
+
+input.valid {
+  border-bottom: 1px solid greenyellow;
+}
