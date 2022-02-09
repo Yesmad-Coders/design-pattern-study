@@ -121,3 +121,114 @@ export default function App() {
 - 과도한 Provider pattern 사용은 성능 이슈 야기
   - 해당 context 사용하는 모든 component는 global state 변화 시마다 re-render
   - 이슈 방지 위해 용도별 분리된 provider 사용 필요
+
+## Case study
+
+### 1. Redux Provider
+
+- Provider > ReactReduxContext
+
+```js
+// Provider.js
+function Provider({ store, context, children }) {
+  const contextValue = useMemo(() => {
+    const subscription = createSubscription(store);
+    subscription.onStateChange = subscription.notifyNestedSubs;
+    return {
+      store,
+      subscription,
+    };
+  }, [store]);
+
+  const previousState = useMemo(() => store.getState(), [store]);
+
+  useIsomorphicLayoutEffect(() => {
+    const { subscription } = contextValue;
+    subscription.trySubscribe();
+
+    if (previousState !== store.getState()) {
+      subscription.notifyNestedSubs();
+    }
+    return () => {
+      subscription.tryUnsubscribe();
+      subscription.onStateChange = null;
+    };
+  }, [contextValue, previousState]);
+
+  const Context = context || ReactReduxContext;
+
+  return <Context.Provider value={contextValue}>{children}</Context.Provider>;
+}
+```
+
+```js
+// Context.js
+import React from "react";
+
+export const ReactReduxContext = /*#__PURE__*/ React.createContext(null);
+
+if (process.env.NODE_ENV !== "production") {
+  ReactReduxContext.displayName = "ReactRedux";
+}
+
+export default ReactReduxContext;
+```
+
+### 2. Apollo Provider
+
+- ApolloProvider > getApolloContext
+
+```js
+// ApolloProvier.js
+import { invariant } from "../../utilities/globals/index.js";
+import * as React from "react";
+import { getApolloContext } from "./ApolloContext.js";
+export var ApolloProvider = function (_a) {
+  var client = _a.client,
+    children = _a.children;
+  var ApolloContext = getApolloContext();
+  return React.createElement(ApolloContext.Consumer, null, function (context) {
+    if (context === void 0) {
+      context = {};
+    }
+    if (client && context.client !== client) {
+      context = Object.assign({}, context, { client: client });
+    }
+    __DEV__
+      ? invariant(
+          context.client,
+          "ApolloProvider was not passed a client instance. Make " +
+            'sure you pass in your client via the "client" prop.'
+        )
+      : invariant(context.client, 26);
+    return React.createElement(
+      ApolloContext.Provider,
+      { value: context },
+      children
+    );
+  });
+};
+```
+
+```js
+// ApooloContext.js
+import * as React from "react";
+import { canUseSymbol } from "../../utilities/index.js";
+var contextKey = canUseSymbol
+  ? Symbol.for("__APOLLO_CONTEXT__")
+  : "__APOLLO_CONTEXT__";
+export function getApolloContext() {
+  var context = React.createContext[contextKey];
+  if (!context) {
+    Object.defineProperty(React.createContext, contextKey, {
+      value: (context = React.createContext({})),
+      enumerable: false,
+      writable: false,
+      configurable: true,
+    });
+    context.displayName = "ApolloContext";
+  }
+  return context;
+}
+export { getApolloContext as resetApolloContext };
+```
